@@ -69,6 +69,7 @@ main {
 .header {
   max-width: 830px;
   margin: 0 auto;
+
 }
 
 .header::after {
@@ -107,6 +108,7 @@ main {
     position: relative;
     transform: translateX(0px);
     transition: transform 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
+      z-index: 1;
 }
 
 .header .center--left {
@@ -315,9 +317,9 @@ footer {
     display: inline-block;
 }
 
-.scrolled {
+.scrollTop {
     position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 1;
     width: 100%;
 }

@@ -1,17 +1,19 @@
 var el = document.querySelector('.menu');
 var elHeight = el.offsetHeight;
-
+var elH = document.querySelector('header').clientHeight;
 document.addEventListener('scroll', function (e) {
-	var  menu = document.querySelector(".goods");
+	var  m = document.querySelector(".goods");
 
-	var scrollTop = document.documentElement.scrollTop;
+	var scrollTop = window.pageYOffset;
 
-	if(scrollTop >= 130) {
+	if(scrollTop >= elH) {
+
         el.classList.add('scrollTop');
-        menu.style.paddingTop = (elHeight+30) + "px";
-    }   
-    else {     
+        m.style.paddingTop = (elHeight + el.style.Height ) + "px";
+				console.log(m.style.paddingTop);
+    }
+    else {
         el.classList.remove('scrollTop');
-        menu.style.paddingTop = "30px";
+        m.style.paddingTop = el.style.Height + "px";
     }
 });
