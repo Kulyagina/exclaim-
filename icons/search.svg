@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HEADER" transform="translate(-1288.000000, -134.000000)" fill="#1A1A1A">
+            <path d="M1303.7,148.3 L1300.595,145.195 C1301.473,144.024 1302,142.576 1302,141 C1302,137.134 1298.866,134 1295,134 C1291.134,134 1288,137.134 1288,141 C1288,144.866 1291.134,148 1295,148 C1296.576,148 1298.024,147.473 1299.194,146.595 L1302.3,149.7 C1302.484,149.884 1302.68,150 1303,150 C1303.553,150 1304,149.553 1304,149 C1304,148.781 1303.946,148.546 1303.7,148.3 L1303.7,148.3 Z M1290,141 C1290,138.238 1292.238,136 1295,136 C1297.762,136 1300,138.238 1300,141 C1300,143.762 1297.762,146 1295,146 C1292.238,146 1290,143.762 1290,141 L1290,141 Z" id="search"></path>
+        </g>
+    </g>
+</svg>

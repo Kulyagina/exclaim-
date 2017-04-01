@@ -1,0 +1,65 @@
+.goods {
+  padding-top: 30px;
+}
+
+.goods .left {
+  width: 270px;
+  float: left;
+}
+
+.goods .right {
+  margin-left: 270px;
+  margin-right: -45px;
+  font-size: 0;
+}
+
+.goods .right::after {
+  content: '';
+  display: table;
+  width: 100%;
+}
+
+.goods .elements {
+  margin-bottom: 30px;
+}
+
+.goods .item {
+  display: inline-block;
+  width: 25%;
+  padding: 0 45px 0 10px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  font-size: 15px;
+  vertical-align: top;
+}
+
+.goods .preview {
+  position: relative;
+  display: block;
+  height: 290px;
+}
+
+.goods .preview img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+.goods .title {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 15px;
+  font-family: 'Baskerville Cyrillic LT Std', 'Georgia', serif;
+}
+
+.goods .price {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
