@@ -6,9 +6,11 @@ document.addEventListener('scroll', function (e) {
     var scrollTop = window.pageYOffset;
 	if(scrollTop >= elH) {
         el.classList.add('scrollTop');
-		    }
+		    m.style.paddingTop = elHeight  + "px";
+    }
     else {
         el.classList.remove('scrollTop');
+		    m.style.paddingTop = 0;
     }
-    m.style.paddingTop = elHeight  + "px";
+
 });
