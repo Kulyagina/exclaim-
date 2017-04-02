@@ -6,7 +6,7 @@ fnDelay = (function(){
         timer = setTimeout(callback, ms);
     };
 })();
-var isLoad = true;
+var isLoad = false;
 document.addEventListener('scroll', function (e) {
 
     var scrollHeight = Math.max(
@@ -16,8 +16,8 @@ document.addEventListener('scroll', function (e) {
     );
     var clientHeight = document.documentElement.clientHeight;
     var scrollTop = window.pageYOffset;
-    if(((scrollHeight - clientHeight) <= scrollTop + 170 ) && (isLoad)) {
-        isLoad = false;
+    if(((scrollHeight - clientHeight) <= scrollTop + 170 ) && (!isLoad)) {
+        isLoad = true;
         var xhr = new XMLHttpRequest();
 
         xhr.open('GET', './data.json', true);
@@ -55,7 +55,7 @@ document.addEventListener('scroll', function (e) {
                     elements.appendChild(itemNode);
                 });
             }
-           isLoad = true;
+           isLoad = false;
         }
 
         xhr.send();
