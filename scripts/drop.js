@@ -1,11 +1,11 @@
-var logo = document.querySelector('header .center');
+let logo = document.querySelector('header .center');
 
-var is_Move = false;
-var lastPos = {
+let is_Move = false;
+let lastPos = {
   top: 0,
   left : 0
 };
-var curPos = {
+let curPos = {
   top: 0,
   left: 0
 };

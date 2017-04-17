@@ -1,63 +1,41 @@
-var elements = document.querySelector('.elements');
-fnDelay = (function(){
-    var timer = 0;
-    return function(callback, ms){
-        clearTimeout(timer);
-        timer = setTimeout(callback, ms);
-    };
-})();
-var isLoad = false;
-document.addEventListener('scroll', function (e) {
 
-    var scrollHeight = Math.max(
-        document.body.scrollHeight, document.documentElement.scrollHeight,
-        document.body.offsetHeight, document.documentElement.offsetHeight,
-        document.body.clientHeight, document.documentElement.clientHeight
-    );
-    var clientHeight = document.documentElement.clientHeight;
-    var scrollTop = window.pageYOffset;
-    if(((scrollHeight - clientHeight) <= scrollTop + 170 ) && (!isLoad)) {
-        isLoad = true;
-        var xhr = new XMLHttpRequest();
+    let elements = document.querySelector('.elements');
+   document.addEventListener('scroll', function (e) {
+  let scrollHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+  );
+  let clientHeight = document.documentElement.clientHeight;
+  let scrollTop = window.pageYOffset;
 
-        xhr.open('GET', './data.json', true);
+  if((scrollHeight - clientHeight) <= scrollTop + 170 ) {
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState !== 4) return;
+    var xhr = new XMLHttpRequest();
 
-            if (xhr.status === 200 || xhr.status === 201) {
-                var data = JSON.parse(xhr.responseText);
+    xhr.open('GET', './data.json', true);
 
-                data.goods.forEach(function (item) {
-                    var itemNode = document.createElement('div');
-                    itemNode.classList.add('item');
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== 4) return;
 
-                    var previewNode = document.createElement('span');
-                    previewNode.classList.add('preview');
+      if (xhr.status === 200 || xhr.status === 201) {
+        var data = JSON.parse(xhr.responseText);
 
-                    var imgNode = document.createElement('img');
-                    imgNode.src = 'goods/' + item.preview;
+        data.goods.forEach(function (item) {
+          var itemNode = document.createElement('div');
+            itemNode.classList.add('item');
+            itemNode.innerHTML =
+                `<span class="preview">
+                <img src="goods/${item.preview}" />
+                </span>
+                <span class="title">${item.title}</span>
+                <span class="price">${item.price} </span>`;
 
-                    var titleNode = document.createElement('span');
-                    titleNode.classList.add('title');
-                    titleNode.appendChild(document.createTextNode(item.title));
-
-                    var priceNode = document.createElement('span');
-                    priceNode.classList.add('price');
-                    priceNode.appendChild(document.createTextNode(item.price + ' P'));
-
-                    previewNode.appendChild(imgNode);
-
-                    itemNode.appendChild(previewNode)
-                    itemNode.appendChild(titleNode)
-                    itemNode.appendChild(priceNode)
-
-                    elements.appendChild(itemNode);
-                });
-            }
-           isLoad = false;
-        }
-
-        xhr.send();
+          elements.appendChild(itemNode);
+        });
+      }
     }
+
+    xhr.send();
+  }
 });
